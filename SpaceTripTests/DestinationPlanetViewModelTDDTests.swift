@@ -36,13 +36,13 @@ class DestinationPlanetViewModelTDDTests: XCTestCase {
         
     }
     
-    func test_signOfLife_planetEarth_easterEggEnabled() {
+    func test_signOfLife_planetVenus_easterEggEnabled() {
         
         // given
         let sut = createSystemUnderTest(easterEggEnabled: true)
         
         // when
-        let result = sut.signOfLife(on: .earth)
+        let result = sut.signOfLife(on: .venus)
         
         // then
         XCTAssertEqual(result.count, 1)

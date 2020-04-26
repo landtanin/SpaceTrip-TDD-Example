@@ -11,8 +11,8 @@ import SwiftUI
 
 typealias PlanetName = String
 
-enum InnerSolarSystemPlanet: PlanetName, CaseIterable {
-    case mercury, venus, earth, mars
+enum InnerSolarSystemDestinationPlanet: PlanetName, CaseIterable {
+    case mercury, venus, mars
 }
 
 enum StarWarsPlanet: PlanetName, CaseIterable {
@@ -34,11 +34,11 @@ struct LifeSign: Equatable {
 }
 
 protocol SpaceLifeSignDB {
-    func getLifeSigns(on planet: InnerSolarSystemPlanet) -> [LifeSign]
+    func getLifeSigns(on planet: InnerSolarSystemDestinationPlanet) -> [LifeSign]
 }
 
 struct FakeSpaceLifeSignDB: SpaceLifeSignDB {
-    func getLifeSigns(on planet: InnerSolarSystemPlanet) -> [LifeSign] {
+    func getLifeSigns(on planet: InnerSolarSystemDestinationPlanet) -> [LifeSign] {
         
         if planet == .mars {
             return [
@@ -55,7 +55,7 @@ struct FakeSpaceLifeSignDB: SpaceLifeSignDB {
 }
 
 struct SeriousSpaceLifeSignDB: SpaceLifeSignDB {
-    func getLifeSigns(on planet: InnerSolarSystemPlanet) -> [LifeSign] {
+    func getLifeSigns(on planet: InnerSolarSystemDestinationPlanet) -> [LifeSign] {
         
         return [
             LifeSign(
@@ -86,7 +86,7 @@ struct DestinationPlanetViewModel {
     
     func availableDesinations() -> [PlanetName] {
         
-        let planets = InnerSolarSystemPlanet.allCases.map(InnerSolarSystemPlanet.toRawValue)
+        let planets = InnerSolarSystemDestinationPlanet.allCases.map(InnerSolarSystemDestinationPlanet.toRawValue)
 //        if starWarsEasterEggEnabled {
 //            planets.append(contentsOf: StarWarsPlanet.allCases.map{$0.rawValue})
 //        }
@@ -95,7 +95,7 @@ struct DestinationPlanetViewModel {
         
     }
     
-    func signOfLife(on planet: InnerSolarSystemPlanet) -> [LifeSign] {
+    func signOfLife(on planet: InnerSolarSystemDestinationPlanet) -> [LifeSign] {
         
         var lifeSigns = [LifeSign]()
         if easterEggEnabled && planet == .mars {

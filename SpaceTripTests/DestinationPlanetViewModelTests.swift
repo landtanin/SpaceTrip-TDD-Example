@@ -12,7 +12,8 @@ import XCTest
 let lifeSign1: LifeSign = LifeSign(title: "LifeSign 1", description: "LifeSign 1 description", images: nil)
 
 struct MockSpaceLifeSignDB: SpaceLifeSignDB {
-    func getLifeSigns(on planet: InnerSolarSystemPlanet) -> [LifeSign] {
+    func getLifeSigns(on planet: InnerSolarSystemDestinationPlanet) -> [LifeSign] {
+        
         [lifeSign1]
     }
 }
@@ -20,7 +21,7 @@ struct MockSpaceLifeSignDB: SpaceLifeSignDB {
 let easterEggLifeSign1: LifeSign = LifeSign(title: "EasterEggLifeSign 1", description: "EasterEggLifeSign 1 description", images: nil)
 
 struct MockEasterEggLifeSignDB: SpaceLifeSignDB {
-    func getLifeSigns(on planet: InnerSolarSystemPlanet) -> [LifeSign] {
+    func getLifeSigns(on planet: InnerSolarSystemDestinationPlanet) -> [LifeSign] {
         [easterEggLifeSign1]
     }
 }
@@ -67,39 +68,7 @@ class DestinationPlanetViewModelTests: XCTestCase {
             XCTAssertEqual(result[0], lifeSign1)
         }
     }
-    
-    // MARK: Earth
-    
-    func test_signOfLife_planetEarth_easterEggEnabled() {
-        // given
-        let sut = createSystemUnderTest(easterEggEnabled: true)
-        
-        // when
-        let result = sut.signOfLife(on: .earth)
-        
-        // when
-        XCTAssertEqual(result.count, 1)
-        if !result.isEmpty {
-            XCTAssertEqual(result[0], lifeSign1)
-        }
-        
-    }
-    
-    func test_signOfLife_planetEarth_easterEggDisabled() {
-        // given
-        let sut = createSystemUnderTest(easterEggEnabled: false)
-        
-        // when
-        let result = sut.signOfLife(on: .mars)
-        
-        // when
-        XCTAssertEqual(result.count, 1)
-        if !result.isEmpty {
-            XCTAssertEqual(result[0], lifeSign1)
-        }
-        
-    }
-    
+
     // MARK: Venus
     
     func test_signOfLife_planetVenus_easterEggEnabled() {

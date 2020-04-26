@@ -68,4 +68,20 @@ class DestinationPlanetViewModelTDDTests: XCTestCase {
         
     }
     
+    func test_signOfLife_planetVenus_easterEggDisabled() {
+        
+        // given
+        let sut = createSystemUnderTest(easterEggEnabled: false)
+        
+        // when
+        let result = sut.signOfLife(on: .venus)
+        
+        // then
+        XCTAssertEqual(result.count, 1)
+        if result.count == 1 {
+            XCTAssertEqual(result[0], venusLifeSign1)
+        }
+        
+    }
+    
 }

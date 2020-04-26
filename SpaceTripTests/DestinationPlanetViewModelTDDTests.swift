@@ -36,4 +36,20 @@ class DestinationPlanetViewModelTDDTests: XCTestCase {
         
     }
     
+    func test_signOfLife_planetEarth_easterEggEnabled() {
+        
+        // given
+        let sut = createSystemUnderTest(easterEggEnabled: true)
+        
+        // when
+        let result = sut.signOfLife(on: .earth)
+        
+        // then
+        XCTAssertEqual(result.count, 1)
+        if result.count == 1 {
+            XCTAssertEqual(result[0], lifeSign1)
+        }
+        
+    }
+    
 }

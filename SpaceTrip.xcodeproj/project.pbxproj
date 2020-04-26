@@ -14,7 +14,22 @@
 		F323A8F7242F5C8800ECC1E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F323A8F6242F5C8800ECC1E9 /* Preview Assets.xcassets */; };
 		F323A8FA242F5C8800ECC1E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F323A8F8242F5C8800ECC1E9 /* LaunchScreen.storyboard */; };
 		F323A902242F5CE100ECC1E9 /* DesinationPlanetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323A901242F5CE100ECC1E9 /* DesinationPlanetViewModel.swift */; };
+		F323A9042430997700ECC1E9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323A9032430997700ECC1E9 /* DetailView.swift */; };
+		F345139B24557B7000F405B2 /* DestinationPlanetViewModelTDD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345139A24557B7000F405B2 /* DestinationPlanetViewModelTDD.swift */; };
+		F345139D24557BBB00F405B2 /* DestinationPlanetViewModelTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345139C24557BBB00F405B2 /* DestinationPlanetViewModelTDDTests.swift */; };
+		F3C2A0952437B9910073EFFE /* DestinationPlanetViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C2A0942437B9910073EFFE /* DestinationPlanetViewModelTests.swift */; };
+		F3C2A0A02437BFAA0073EFFE /* SecondTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C2A09F2437BFAA0073EFFE /* SecondTestClass.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F3C2A0972437B9910073EFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F323A8E2242F5C8600ECC1E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F323A8E9242F5C8700ECC1E9;
+			remoteInfo = SpaceTrip;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F323A8EA242F5C8700ECC1E9 /* SpaceTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +41,24 @@
 		F323A8F9242F5C8800ECC1E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F323A8FB242F5C8800ECC1E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F323A901242F5CE100ECC1E9 /* DesinationPlanetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesinationPlanetViewModel.swift; sourceTree = "<group>"; };
+		F323A9032430997700ECC1E9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		F345139A24557B7000F405B2 /* DestinationPlanetViewModelTDD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationPlanetViewModelTDD.swift; sourceTree = "<group>"; };
+		F345139C24557BBB00F405B2 /* DestinationPlanetViewModelTDDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationPlanetViewModelTDDTests.swift; sourceTree = "<group>"; };
+		F3C2A0922437B9910073EFFE /* SpaceTripTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceTripTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3C2A0942437B9910073EFFE /* DestinationPlanetViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationPlanetViewModelTests.swift; sourceTree = "<group>"; };
+		F3C2A0962437B9910073EFFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3C2A09F2437BFAA0073EFFE /* SecondTestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTestClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F323A8E7242F5C8700ECC1E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3C2A08F2437B9910073EFFE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				F323A8EC242F5C8700ECC1E9 /* SpaceTrip */,
+				F3C2A0932437B9910073EFFE /* SpaceTripTests */,
 				F323A8EB242F5C8700ECC1E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				F323A8EA242F5C8700ECC1E9 /* SpaceTrip.app */,
+				F3C2A0922437B9910073EFFE /* SpaceTripTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,11 +92,13 @@
 				F323A8ED242F5C8700ECC1E9 /* AppDelegate.swift */,
 				F323A8EF242F5C8700ECC1E9 /* SceneDelegate.swift */,
 				F323A8F1242F5C8700ECC1E9 /* ContentView.swift */,
+				F323A9032430997700ECC1E9 /* DetailView.swift */,
 				F323A8F3242F5C8800ECC1E9 /* Assets.xcassets */,
 				F323A8F8242F5C8800ECC1E9 /* LaunchScreen.storyboard */,
 				F323A8FB242F5C8800ECC1E9 /* Info.plist */,
 				F323A8F5242F5C8800ECC1E9 /* Preview Content */,
 				F323A901242F5CE100ECC1E9 /* DesinationPlanetViewModel.swift */,
+				F345139A24557B7000F405B2 /* DestinationPlanetViewModelTDD.swift */,
 			);
 			path = SpaceTrip;
 			sourceTree = "<group>";
@@ -76,6 +109,17 @@
 				F323A8F6242F5C8800ECC1E9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3C2A0932437B9910073EFFE /* SpaceTripTests */ = {
+			isa = PBXGroup;
+			children = (
+				F3C2A0942437B9910073EFFE /* DestinationPlanetViewModelTests.swift */,
+				F3C2A0962437B9910073EFFE /* Info.plist */,
+				F3C2A09F2437BFAA0073EFFE /* SecondTestClass.swift */,
+				F345139C24557BBB00F405B2 /* DestinationPlanetViewModelTDDTests.swift */,
+			);
+			path = SpaceTripTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +142,24 @@
 			productReference = F323A8EA242F5C8700ECC1E9 /* SpaceTrip.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F3C2A0912437B9910073EFFE /* SpaceTripTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3C2A0992437B9910073EFFE /* Build configuration list for PBXNativeTarget "SpaceTripTests" */;
+			buildPhases = (
+				F3C2A08E2437B9910073EFFE /* Sources */,
+				F3C2A08F2437B9910073EFFE /* Frameworks */,
+				F3C2A0902437B9910073EFFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3C2A0982437B9910073EFFE /* PBXTargetDependency */,
+			);
+			name = SpaceTripTests;
+			productName = SpaceTripTests;
+			productReference = F3C2A0922437B9910073EFFE /* SpaceTripTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -110,6 +172,10 @@
 				TargetAttributes = {
 					F323A8E9242F5C8700ECC1E9 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					F3C2A0912437B9910073EFFE = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = F323A8E9242F5C8700ECC1E9;
 					};
 				};
 			};
@@ -127,6 +193,7 @@
 			projectRoot = "";
 			targets = (
 				F323A8E9242F5C8700ECC1E9 /* SpaceTrip */,
+				F3C2A0912437B9910073EFFE /* SpaceTripTests */,
 			);
 		};
 /* End PBXProject section */
@@ -142,6 +209,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F3C2A0902437B9910073EFFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -149,14 +223,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F345139B24557B7000F405B2 /* DestinationPlanetViewModelTDD.swift in Sources */,
 				F323A902242F5CE100ECC1E9 /* DesinationPlanetViewModel.swift in Sources */,
 				F323A8EE242F5C8700ECC1E9 /* AppDelegate.swift in Sources */,
 				F323A8F0242F5C8700ECC1E9 /* SceneDelegate.swift in Sources */,
+				F323A9042430997700ECC1E9 /* DetailView.swift in Sources */,
 				F323A8F2242F5C8700ECC1E9 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F3C2A08E2437B9910073EFFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3C2A0A02437BFAA0073EFFE /* SecondTestClass.swift in Sources */,
+				F3C2A0952437B9910073EFFE /* DestinationPlanetViewModelTests.swift in Sources */,
+				F345139D24557BBB00F405B2 /* DestinationPlanetViewModelTDDTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F3C2A0982437B9910073EFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F323A8E9242F5C8700ECC1E9 /* SpaceTrip */;
+			targetProxy = F3C2A0972437B9910073EFFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F323A8F8242F5C8800ECC1E9 /* LaunchScreen.storyboard */ = {
@@ -324,6 +418,46 @@
 			};
 			name = Release;
 		};
+		F3C2A09A2437B9910073EFFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4246PMBZVS;
+				INFOPLIST_FILE = SpaceTripTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.landtanin.SpaceTripTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceTrip.app/SpaceTrip";
+			};
+			name = Debug;
+		};
+		F3C2A09B2437B9910073EFFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4246PMBZVS;
+				INFOPLIST_FILE = SpaceTripTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.landtanin.SpaceTripTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceTrip.app/SpaceTrip";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -341,6 +475,15 @@
 			buildConfigurations = (
 				F323A8FF242F5C8800ECC1E9 /* Debug */,
 				F323A900242F5C8800ECC1E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3C2A0992437B9910073EFFE /* Build configuration list for PBXNativeTarget "SpaceTripTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3C2A09A2437B9910073EFFE /* Debug */,
+				F3C2A09B2437B9910073EFFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

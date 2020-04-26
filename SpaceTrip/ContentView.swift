@@ -9,8 +9,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let vm = DestinationPlanetViewModel(
+        spaceLifeSignDB: SeriousSpaceLifeSignDB(),
+        easterEggDatabaseFactory: {FakeSpaceLifeSignDB()}
+    )
+    
     var body: some View {
-        List(["PlanetA", "PlanetB"], id: \.self, rowContent: Text.init)
+        NavigationView {
+            List(vm.availableDesinations(), id: \.self) { planet in
+                NavigationLink(
+                    destination: DetailView(planetDetailVM: PlanetDetailViewModel(planetName: planet))
+                ) {
+                    Text(planet)
+                }
+            }
+            .navigationBarTitle("Planet", displayMode: .automatic)
+            
+        }
+
     }
 }
 

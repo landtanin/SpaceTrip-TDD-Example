@@ -30,8 +30,8 @@ class DestinationPlanetViewModelTDDTests: XCTestCase {
         // then
         XCTAssertEqual(result.count, 2)
         if result.count == 2 {
-            XCTAssertEqual(result[0], easterEggLifeSign1)
-            XCTAssertEqual(result[1], lifeSign1)
+            XCTAssertEqual(result[0], marsEasterEggLifeSign1)
+            XCTAssertEqual(result[1], marsLifeSign1)
         }
         
     }
@@ -47,7 +47,7 @@ class DestinationPlanetViewModelTDDTests: XCTestCase {
         // then
         XCTAssertEqual(result.count, 1)
         if result.count == 1 {
-            XCTAssertEqual(result[0], lifeSign1)
+            XCTAssertEqual(result[0], venusLifeSign1)
         }
         
     }

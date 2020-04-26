@@ -9,20 +9,34 @@
 import XCTest
 @testable import SpaceTrip
 
-let lifeSign1: LifeSign = LifeSign(title: "LifeSign 1", description: "LifeSign 1 description", images: nil)
+let marsLifeSign1: LifeSign = LifeSign(title: "Mars LifeSign 1", description: "Mars LifeSign 1 description", images: nil)
+let venusLifeSign1: LifeSign = LifeSign(title: "Venus LifeSign 1", description: "Venus LifeSign 1 description", images: nil)
+let mercuryLifeSign1: LifeSign = LifeSign(title: "Mercury LifeSign 1", description: "Mercury LifeSign 1 description", images: nil)
 
 struct MockSpaceLifeSignDB: SpaceLifeSignDB {
     func getLifeSigns(on planet: InnerSolarSystemDestinationPlanet) -> [LifeSign] {
-        
-        [lifeSign1]
+        switch planet {
+        case .mercury:
+            return [mercuryLifeSign1]
+        case .venus:
+            return [venusLifeSign1]
+        case .mars:
+            return [marsLifeSign1]
+        }
     }
 }
 
-let easterEggLifeSign1: LifeSign = LifeSign(title: "EasterEggLifeSign 1", description: "EasterEggLifeSign 1 description", images: nil)
+let marsEasterEggLifeSign1: LifeSign = LifeSign(
+    title: "A red car with a space suit",
+    description: "A red car identified to be Tesla's roaster with a SpaceX space suit called Starman was found crashed...",
+    images: nil)
 
 struct MockEasterEggLifeSignDB: SpaceLifeSignDB {
     func getLifeSigns(on planet: InnerSolarSystemDestinationPlanet) -> [LifeSign] {
-        [easterEggLifeSign1]
+        if planet == .mars {
+            return [marsEasterEggLifeSign1]
+        }
+        return []
     }
 }
 
@@ -41,17 +55,15 @@ class DestinationPlanetViewModelTests: XCTestCase {
     func test_signOfLife_planetMars_easterEggEnabled() {
         
         // given
-        let sut = createSystemUnderTest(easterEggEnabled: false)
+        let sut = createSystemUnderTest(easterEggEnabled: true)
         
         // when
         let result = sut.signOfLife(on: .mars)
         
         // when
         XCTAssertEqual(result.count, 2)
-//        if !result.isEmpty {
-            XCTAssertEqual(result[0], easterEggLifeSign1)
-            XCTAssertEqual(result[1], lifeSign1)
-//        }
+        XCTAssertEqual(result[0], marsEasterEggLifeSign1)
+        XCTAssertEqual(result[1], marsLifeSign1)
         
     }
     
@@ -64,11 +76,9 @@ class DestinationPlanetViewModelTests: XCTestCase {
         
         // when
         XCTAssertEqual(result.count, 1)
-        if !result.isEmpty {
-            XCTAssertEqual(result[0], lifeSign1)
-        }
+        XCTAssertEqual(result[0], marsLifeSign1)
     }
-
+    
     // MARK: Venus
     
     func test_signOfLife_planetVenus_easterEggEnabled() {
@@ -80,9 +90,7 @@ class DestinationPlanetViewModelTests: XCTestCase {
         
         // when
         XCTAssertEqual(result.count, 1)
-        if !result.isEmpty {
-            XCTAssertEqual(result[0], lifeSign1)
-        }
+        XCTAssertEqual(result[0], venusLifeSign1)
         
     }
     
@@ -95,9 +103,7 @@ class DestinationPlanetViewModelTests: XCTestCase {
         
         // when
         XCTAssertEqual(result.count, 1)
-        if !result.isEmpty {
-            XCTAssertEqual(result[0], lifeSign1)
-        }
+        XCTAssertEqual(result[0], venusLifeSign1)
         
     }
     
@@ -112,9 +118,7 @@ class DestinationPlanetViewModelTests: XCTestCase {
         
         // when
         XCTAssertEqual(result.count, 1)
-        if !result.isEmpty {
-            XCTAssertEqual(result[0], lifeSign1)
-        }
+        XCTAssertEqual(result[0], mercuryLifeSign1)
         
     }
     
@@ -123,14 +127,11 @@ class DestinationPlanetViewModelTests: XCTestCase {
         let sut = createSystemUnderTest(easterEggEnabled: false)
         
         // when
-        let result = sut.signOfLife(on: .venus)
+        let result = sut.signOfLife(on: .mercury)
         
         // when
         XCTAssertEqual(result.count, 1)
-        if !result.isEmpty {
-            XCTAssertEqual(result[0], lifeSign1)
-        }
-        
+        XCTAssertEqual(result[0], mercuryLifeSign1)
     }
     
 }

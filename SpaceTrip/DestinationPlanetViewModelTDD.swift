@@ -37,7 +37,7 @@ struct DestinationPlanetViewModelTDD {
             return spaceLifeSignDB.getLifeSigns(on: planet)
         }
         
-        if !easterEggEnabled && planet != .venus {
+        if !easterEggEnabled {
             return spaceLifeSignDB.getLifeSigns(on: .mars)
         }
         

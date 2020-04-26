@@ -15,6 +15,10 @@ struct DestinationPlanetViewModelTDD {
     var makeEasterEggDatabase: () -> SpaceLifeSignDB
     
     func signOfLife(on planet: InnerSolarSystemDestinationPlanet) -> [LifeSign] {
+    
+        if !easterEggEnabled {
+            return spaceLifeSignDB.getLifeSigns(on: .mars)
+        }
         
         if planet == .venus {
             return spaceLifeSignDB.getLifeSigns(on: .venus)

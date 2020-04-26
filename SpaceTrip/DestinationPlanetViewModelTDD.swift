@@ -16,6 +16,10 @@ struct DestinationPlanetViewModelTDD {
     
     func signOfLife(on planet: InnerSolarSystemDestinationPlanet) -> [LifeSign] {
     
+        if planet == .mercury {
+            return spaceLifeSignDB.getLifeSigns(on: planet)
+        }
+        
         if !easterEggEnabled && planet != .venus {
             return spaceLifeSignDB.getLifeSigns(on: .mars)
         }

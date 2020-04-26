@@ -84,4 +84,20 @@ class DestinationPlanetViewModelTDDTests: XCTestCase {
         
     }
     
+    func test_signOfLife_planetMercury() {
+        
+        // given
+        let sut = createSystemUnderTest(easterEggEnabled: false)
+        
+        // when
+        let result = sut.signOfLife(on: .mercury)
+        
+        // then
+        XCTAssertEqual(result.count, 1)
+        if result.count == 1 {
+            XCTAssertEqual(result[0], mercuryLifeSign1)
+        }
+        
+    }
+    
 }

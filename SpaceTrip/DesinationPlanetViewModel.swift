@@ -87,10 +87,6 @@ struct DestinationPlanetViewModel {
     func availableDesinations() -> [PlanetName] {
         
         let planets = InnerSolarSystemDestinationPlanet.allCases.map(InnerSolarSystemDestinationPlanet.toRawValue)
-//        if starWarsEasterEggEnabled {
-//            planets.append(contentsOf: StarWarsPlanet.allCases.map{$0.rawValue})
-//        }
-        
         return planets
         
     }
@@ -103,11 +99,6 @@ struct DestinationPlanetViewModel {
             lifeSigns.append(contentsOf: db.getLifeSigns(on: planet))
         }
         
-//        if easterEggEnabled && planet == .venus {
-//            let db = makeEasterEggDatabase()
-//            lifeSigns.append(contentsOf: db.getLifeSigns(on: planet))
-//        }
-
         lifeSigns.append(contentsOf: spaceLifeSignDB.getLifeSigns(on: planet))
         return lifeSigns
                 
